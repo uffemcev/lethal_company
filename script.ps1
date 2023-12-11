@@ -1,3 +1,5 @@
+$ProgressPreference = 'SilentlyContinue'
+
 $file = ".\LC.zip"
 $path = "C:\Program Files (x86)\Steam\steamapps\common"
 $mods = ".\Lethal Company"
