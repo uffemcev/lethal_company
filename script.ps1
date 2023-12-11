@@ -7,18 +7,18 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 #ЗНАЧЕНИЯ
 $ProgressPreference = 'SilentlyContinue'
-$file = ".\LC.zip"
+$file = ".\mods.zip"
 $path = "C:\Program Files (x86)\Steam\steamapps\common"
-$mods = ".\Lethal Company"
+$folder = ".\Lethal Company"
 
 #СКАЧИВАНИЕ
-iwr 'https://github.com/uffemcev/LC/releases/download/LC/LC.zip' -Useb -OutFile '.\LC.zip'
+iwr 'https://github.com/uffemcev/lethal_company/releases/download/mods/mods.zip' -Useb -OutFile $file
 
 #УСТАНОВКА
 Remove-Item -Recurse -Force -ErrorAction 0 "$path\Lethal Company\BepInEx"
-Expand-Archive -ErrorAction 0 -Force $file $mods
-Copy-Item $mods $path -Recurse -Force
+Expand-Archive -ErrorAction 0 -Force $file $folder
+Copy-Item $folder $path -Recurse -Force
 
 #ОЧИСТКА
 Remove-Item -Recurse -Force -ErrorAction 0 $file
-Remove-Item -Recurse -Force -ErrorAction 0 $mods
+Remove-Item -Recurse -Force -ErrorAction 0 $folder
