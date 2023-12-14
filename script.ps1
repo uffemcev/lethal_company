@@ -5,6 +5,9 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 	(get-process | where MainWindowTitle -eq $host.ui.RawUI.WindowTitle).id | where {taskkill /PID $_}
 }
 
+cls
+'Please wait...'
+
 #ЗНАЧЕНИЯ
 $ProgressPreference = 'SilentlyContinue'
 $file = ".\mods.zip"
@@ -12,7 +15,7 @@ $path = "C:\Program Files (x86)\Steam\steamapps\common"
 $folder = ".\Lethal Company"
 
 #СКАЧИВАНИЕ
-iwr 'https://github.com/uffemcev/lethal_company/releases/download/mods/mods.zip' -Useb -OutFile $file
+iwr 'https://github.com/uffemcev/lethal_company/raw/main/mods.zip' -Useb -OutFile $file
 
 #УСТАНОВКА
 Remove-Item -Recurse -Force -ErrorAction 0 "$path\Lethal Company\BepInEx"
