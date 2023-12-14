@@ -6,7 +6,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 }
 
 cls
-'Please wait...'
+"`nPlease wait..."
 
 #ЗНАЧЕНИЯ
 $ProgressPreference = 'SilentlyContinue'
